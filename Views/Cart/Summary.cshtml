@@ -1,0 +1,20 @@
+@using TechnoWeb.Models
+@model TechnoWeb.Models.Cart
+@{
+    ViewData["Title"] = "Summary";
+}
+<style>
+    #cart{
+        color: white;
+    }
+</style>
+
+
+<li id="cart" class="nav-item">
+    <span>
+        @if (Model.CartLines.Count > 0)
+        {
+            <text>(@Model.CartLines.Count())</text>
+        }
+    </span>
+</li>

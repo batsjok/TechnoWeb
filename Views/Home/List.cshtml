@@ -1,0 +1,46 @@
+@using TechnoWeb.entity;
+@model TechnoWeb.Models.ProductCategoryViewModel
+
+
+
+@{
+    ViewData["Title"] = "Product List";
+}
+
+<style>
+    .container {
+        width: auto;
+        max-width: 1100px;
+        padding: 0 15px;
+    }
+
+    .product-price {
+        color: #414141;
+        font-weight: 700;
+        font-size: 17px;
+    }
+</style>
+
+<!-- Card -->
+<div class="container mb-5 mt-5">
+    <div class="row">
+        <div class="col-md-3">
+            @await Html.PartialAsync("CategoryList", Model.Categories)
+        </div>
+        <div class="col-md-9">
+            @if (Model.Products.Count == 0)
+            {
+                <div class="alert alert-danger" role="alert">
+                   <strong>Bu Kategoride Ürün Bulunamadı.</strong> 
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-success" role="alert">
+                    <strong>@Model.Products.Count  Adet Ürün Bulundu.</strong>
+                </div>
+            }
+            @await Html.PartialAsync("_ProductList", Model.Products)
+        </div>
+    </div>
+</div>

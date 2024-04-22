@@ -1,0 +1,48 @@
+@model TechnoWeb.Models.ShippingDetails
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Sipariş Bilgileriniz</h2>
+            <hr>
+
+            @using (Html.BeginForm())
+            {
+                <div class="form-group">
+                    <label>Ad Soyad</label>
+                    @Html.TextBoxFor(x => x.FullName, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Adres Başlığı</label>
+                    @Html.TextBoxFor(x => x.AdresBasligi, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Adres</label>
+                    @Html.TextBoxFor(x => x.Adres, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Şehir</label>
+                    @Html.TextBoxFor(x => x.Sehir, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Mahalle</label>
+                    @Html.TextBoxFor(x => x.Mahalle, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Posta Kodu</label>
+                    @Html.TextBoxFor(x => x.PostaKodu, new { @class = "form-control" })
+                </div>
+
+                <button type="submit" class="btn btn-primary">Siparişi Tamamla</button>
+            }
+        </div>
+    </div>
+</div>

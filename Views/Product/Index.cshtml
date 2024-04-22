@@ -1,0 +1,64 @@
+@model IEnumerable<TechnoWeb.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    body{
+        font-size: larger;
+    }
+</style>
+<div class="container">
+
+
+    <h1>Ürün Yönetim Paneli</h1>
+
+    <p>
+        <a class="btn btn-primary" asp-action="Create">Yeni Ürün</a>
+    </p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.IsApproved)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsHome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsApproved)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsHome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.Name)
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a> 
+                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Detaylar</a> 
+                        <a class="btn btn-warning" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

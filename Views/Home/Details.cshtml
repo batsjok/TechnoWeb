@@ -1,0 +1,107 @@
+@using TechnoWeb
+@using TechnoWeb.entity;
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+    .container {
+    width: auto;
+    max-width: 1100px;
+    padding: 0 15px;
+
+    .product-price{
+    color: #414141;
+    font-weight: 700;
+    font-size: 17px;
+    }
+    
+  }
+</style>
+   <!-- Card -->
+      <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img class="img-responsive img-rounded w-100" src="https://m.media-amazon.com/images/I/719C6bJv8jL._AC_UF1000,1000_QL80_.jpg" alt="">
+            </div>
+            <div class="col-md-6">
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <h1>@Model.Name</h1>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-12">
+
+                        @if(Model.IsApproved){
+                            <span class="badge text-bg-primary">In Stock</span>
+                        }
+                        else{
+                            <span class="badge text-bg-danger">Out of Stock</span>
+                        }
+                        
+                        <span class="Product-number">#7839483</span>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <div id="Describtion">@Model.Description</div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col col-md-4">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <span class="badge text-bg-success">92</span>
+                    </div>
+                    <div class="col col-md-4 m-2">
+                        Write a comment
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="badge text-bg-secondary product-price">
+                                <i class="fa fa-try" aria-hidden="true"></i>
+                                TL @Model.Price 
+                            </h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                @using (Html.BeginForm("AddToCart", "Cart"))
+                                {
+                                   <input type="hidden" name="Id" value="@Model.Id" />
+                                  <button type="submit" class="btn btn-success">
+                                  <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                         Add to Cart
+                                  </button>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+                      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+                      <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+                      <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button>
+                    </div>
+                  </nav>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">This is some placeholder content the Home tab's associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other .nav-powered navigation.</div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae facilis natus culpa rerum dolorum deleniti libero nemo repudiandae? Iste itaque ut nulla porro unde velit?</div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, nemo unde perferendis quaerat quibusdam laudantium porro beatae rerum. Hic, aperiam delectus iure repellat corrupti provident et similique obcaecati. Minima, iste.</div>
+                    <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta vel molestiae atque sequi labore rerum voluptates mollitia consequuntur aperiam ex, veritatis, recusandae neque sint. Aspernatur, quisquam.</div>
+                  </div>
+            </div>
+        </div>
+      </div>

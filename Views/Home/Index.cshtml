@@ -1,0 +1,41 @@
+﻿@using TechnoWeb.entity;
+@model IEnumerable<TechnoWeb.Models.ProductModel>
+@{
+    ViewData["Title"] = "Product List";
+}
+
+<style>
+    .container {
+        width: auto;
+        max-width: 1100px;
+        padding: 0 15px;
+    }
+
+    .jumbotron {
+        background-image: url("https://images.unsplash.com/photo-1524169220946-12efd782aab4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-size: cover;
+        height: 100%;
+        color: aliceblue;
+    }
+        .product-price{
+        color: #414141;
+        font-weight: 700;
+        font-size: 17px;
+    }
+</style>
+
+<!-- Jumbotron -->
+<div class="jumbotron p-5 mb-4 bg-body-tertiary rounded-3">
+    <div class="container">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Custom jumbotron</h1>
+            <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+            <button class="btn btn-primary btn-lg" type="button">Example button</button>
+        </div>
+    </div>
+</div>
+
+<!-- Product List -->
+<div class="container pb-5">
+    @await Html.PartialAsync("_ProductList", Model)
+</div>

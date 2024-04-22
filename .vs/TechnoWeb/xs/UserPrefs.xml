@@ -1,0 +1,28 @@
+﻿<Properties>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../Documents/Projelerim/WebApp.web/WebApp.web/Views/Product/GetById.cshtml">
+    <Files>
+      <File FileName="../../Documents/Projelerim/WebApp.web/WebApp.web/TagHelper/ItalicTagHelper.cs" />
+      <File FileName="../../Documents/Projelerim/WebApp.web/WebApp.web/Views/Product/Index.cshtml" />
+      <File FileName="../../Documents/Projelerim/WebApp.web/WebApp.web/Views/Home/Index.cshtml" />
+      <File FileName="../../Documents/Projelerim/WebApp.web/WebApp.web/Views/Home/Visitor.cshtml" />
+      <File FileName="../../Documents/Projelerim/WebApp.web/WebApp.web/Controllers/ProductController.cs" />
+      <File FileName="../../Documents/Projelerim/WebApp.web/WebApp.web/Views/Product/GetById.cshtml" Line="21" Column="7" />
+      <File FileName="../../Documents/Projelerim/WebApp.web/WebApp.web/Views/Product/Add.cshtml" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WebApp.web" expanded="True" selected="True">
+            <Node name="WebApp.web" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

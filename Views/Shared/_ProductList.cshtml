@@ -1,0 +1,31 @@
+@using TechnoWeb.entity
+@model IEnumerable<TechnoWeb.Models.ProductModel>
+
+<div class="container">
+    <div class="row">
+        @foreach (var product in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="data:image/png;base64,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" alt="@product.Name" class="img-fluid ">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="/Home/Details/@product.Id">@product.Name</a>
+                        </h5>
+                        <p class="card-text">@product.Description</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted product-price ">
+                                <i class="fa fa-try" aria-hidden="true"></i>
+                                @product.Price.ToString("C")
+                            </small>
+                            <a href="/Home/Details/@product.Id" class="btn btn-primary btn-xxs float-right">
+                            <i class="fa fa-try" aria-hidden="true"></i>
+                             Detaylar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

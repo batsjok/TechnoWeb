@@ -1,0 +1,25 @@
+@using TechnoWeb.Models;
+@model IEnumerable<TechnoWeb.Models.CategoryModel>
+@{
+    var selectedCategory = Context.GetRouteValue("id");
+}
+
+<style></style>
+<div class="list-group">
+    <a href="/Home/List/" class="list-group-item list-group-item-action" aria-current="true">
+        Tüm Kategoriler
+    </a>
+    @foreach (var category in Model)
+    {
+        var categoryId = category.Id;
+        var isActive = false;
+        if (selectedCategory != null && int.TryParse(selectedCategory.ToString(), out int selectedCategoryId))
+        {
+            isActive = categoryId == selectedCategoryId;
+        }
+        <a href="/Home/List/@category.Id" class="list-group-item list-group-item-action @(isActive ? "active" : "")">
+            @category.Name
+        </a>
+    }
+</div>
+
